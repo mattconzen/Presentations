@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Open Sans'; font-weight: lighter; }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Open Sans';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# DDD, CQRS and ES
+#### Three acronyms I've heard very smart people say very often
+---
+
+# Why are we here?
+
+#### We're here to learn a little bit about three important concepts driving modern distributed systems architectures.
+
+ ### - Domain Driven Design
+ ### - Command-Query Responsibility Segregation
+ ### - Event Sourcing
+
+---
+
+# DDD
+**Domain Driven Design** is a method of designing systems of any kind. It's a philosophy,
+it's not a tool, and it's not an implementation. Think "Agile", not "Scrum".
+
+DDD was most popularly described in the "big blue book" by Eric Evans in 2003.
+
+According to Eric, DDD has three main principles:
+- Place the project's primary focus on the core domain and domain logic
+
+- Base complex designs on a real-world model
+
+- Initiate a creative collaboration between technical and domain experts to iteratively cut ever closer to the conceptual heart of the problem.
+
+
+---
+
+# DDD
+
+So, what is a **domain**?
+
+A **domain** is a sphere of knowledge, influence, or activity. The subject area
+to wihch the user applies a program is the domain of the software.
+
+---
+
+# DDD
+
+Other important definitions:
+
+**model**
+A	 system	 of	 abstractions	 that	 describes	 selected	 aspects	 of	 a	 domain	 and	 can	 be	 used	 to
+solve	problems	related	to	that	domain.
+
+**ubiquitous	language**
+A	 language	 structured	 around	 the	 domain	 model	 and	 used	 by	 all	 team	 members	 within	 a
+bounded	context	to	connect	all	the	activities	of	the	team	with	the	software.
+
+**context**
+The	setting	in	which	a	word	or	statement	appears	 that	determines	its	meaning.	Statements
+about	a	model	can	only	be	understood	in	a	context.
+
+**bounded	context**
+A	description	of	a	boundary	 (typically	a	subsystem,	or	the	work	of	a	particular	team)	within
+which	a	particular	model	is	defined	and	applicable
+
+---
+
+## DDD Example - AppliTrack
+
+The **domain** is the recruiting, hiring and onboarding of K-12 school district personnel.
+
+[Examples of the **model**]
+
+**ubiquitous language** - Applicant, Application, Reference, Certificate, Posting, Survey, Pre-screener, Job
+ - Note that these do NOT include any AppliTrack specific terms! No mention of Requisitions, Workflows, Pipelines, etc.
+ That's because ___the domain is what happens in the real world, and does not directly describe functions of the software___.
+
+**bounded contexts** - Workflows, Report Generation, Forms, Interview Management
+
+## However...
+
+---
+
+# DDD
+
+&nbsp;
+## AppliTrack was not created with domain driven design. :(
+
+---
+
+# DDD
+
+Why are we talking about this? Why do we care?
+
+---
+
+# DDD
+
+When a domain is expressed through software, DDD helps tell us what to build. It
+describes the entities (objects), the services (business logic), and events (real-world events)
+that the software needs to use.
+
+Getting this right is _especially important_ in distributed, event-centric systems, because
+changing them requires significantly more effort and coordination than traditional MVC architectures.
+
+### tl;dr: DDD helps us build stuff right the first time
+
+---
+# Let's pause for a second...
+
+So, we're not going to get into too much detail on DDD or any of these concepts. There are books,
+talks, presentations, conferences, and thousands of blog articles to help.
+
+What we are going to do is talk about what these concepts are, and why they are important.
+
+Then we're going to keep talking about them.
+
+#### We're not just learning new way of building software, but a new way of thinking.
+
+---
+
+# Applying DDD
+__Event Centric Systems__
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
